@@ -1,0 +1,24 @@
+defaults: &defaults
+  host: localhost
+  use_utc: true
+  use_activesupport_time_zone: true
+  identity_map_enabled: true
+  max_retries_on_connection_failure: 5
+  raise_not_found_error: false
+
+development:
+  <<: *defaults
+  database: opentable_development
+
+test:
+  <<: *defaults
+  database: opentable_test
+
+production:
+  <<: *defaults
+  host: YOUR_HOST
+  port: 27737
+  database: opentable_production
+  username: YOUR_USERNAME
+  password: YOUR_PASSWORD
+  logger: false
