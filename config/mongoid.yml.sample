@@ -16,9 +16,9 @@ test:
 
 production:
   <<: *defaults
-  host: YOUR_HOST
-  port: 27737
-  database: opentable_production
-  username: YOUR_USERNAME
-  password: YOUR_PASSWORD
+  host: <%= ENV['MONGO_HOST'] %>
+  port: <%= ENV['MONGO_PORT'] || 27737 %>
+  database: <%= ENV['MONGO_DB'] %>
+  username: <%= ENV['MONGO_USER'] %>
+  password: <%= ENV['MONGO_PASS'] %>
   logger: false
