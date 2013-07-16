@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    RedCloth (4.2.9)
     activemodel (3.2.13)
       activesupport (= 3.2.13)
       builder (~> 3.0.0)
@@ -14,13 +13,8 @@ GEM
       bson (~> 1.9.1)
     builder (3.0.4)
     daemons (1.1.9)
-    docify (1.0.7)
-      RedCloth (~> 4.2)
-      rdiscount (~> 1.6)
-      rdoc (~> 3.7)
     eventmachine (1.0.3)
     i18n (0.6.1)
-    json (1.8.0)
     mini_portile (0.5.1)
     mongo (1.9.1)
       bson (~> 1.9.1)
@@ -44,9 +38,6 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.1.0)
-    rdiscount (1.6.8)
-    rdoc (3.12.2)
-      json (~> 1.4)
     redcarpet (2.3.0)
     roo (1.11.2)
       nokogiri
@@ -80,7 +71,6 @@ PLATFORMS
 DEPENDENCIES
   bson (~> 1.9)
   bson_ext (~> 1.9)
-  docify (~> 1.0)
   mongo (~> 1.9)
   mongoid (~> 2.4)
   mongoid-pagination (~> 0.1)

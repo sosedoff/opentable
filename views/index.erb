@@ -1,1 +1,109 @@
-<%= render_markdown(@readme) %>
+<h1 id="unofficial-opentable-api"><a href="#unofficial-opentable-api" class="anchor">Unofficial OpenTable API</a></h1>
+
+<p>This project was created for one purpose — to make OpenTable data easily accesible to developers. No longer do you have to download XLS file, parse it and insert into your app's database.</p>
+
+<p>Created by Dan Sosedoff during #railsconf 2012 in Austin, TX</p>
+
+<h2 id="usage"><a href="#usage" class="anchor">Usage</a></h2>
+
+<ul>
+<li>API Endpoint: http://opentable.heroku.com/api</li>
+<li>Response Format: JSON</li>
+</ul>
+
+
+<h3 id="list-all-cities"><a href="#list-all-cities" class="anchor">List all cities</a></h3>
+
+<pre class="no-highlight">GET /api/cities</pre>
+
+
+<p>Returns response:</p>
+
+<pre class="no-highlight">{
+  "count": 1234,
+  "cities": [
+    "Chicago",
+    "San Francisco",
+    "New York"
+  ]
+}</pre>
+
+
+<h3 id="find-restaurants"><a href="#find-restaurants" class="anchor">Find restaurants</a></h3>
+
+<pre class="no-highlight">GET /api/restaurants</pre>
+
+
+<p>Parameters: (at least one required)</p>
+
+<ul>
+<li><code>name</code> - Name of the restaurant <em>optional</em></li>
+<li><code>address</code> - Address line. Should not contain state or city or zip. <em>optional</em></li>
+<li><code>state</code> - State code (ex.: IL) <em>optional</em></li>
+<li><code>city</code> - City name (ex.: Chicago) <em>optional</em></li>
+<li><code>zip</code> - Zipcode (ex: 60601) <em>optional</em></li>
+<li><code>country</code> - Country code (ex: US) <em>optional</em></li>
+</ul>
+
+
+<p>Returns response:</p>
+
+<pre class="no-highlight">{
+  "count": 521,
+  "per_page": 25,
+  "current_page": 1,
+  "restaurants": [ ... ]
+}</pre>
+
+
+<h3 id="find-a-single-restaurant"><a href="#find-a-single-restaurant" class="anchor">Find a single restaurant</a></h3>
+
+<pre class="no-highlight">GET /api/restaurants/:id</pre>
+
+
+<p>Returns a single restaurant record, see reference for details.</p>
+
+<h2 id="reference"><a href="#reference" class="anchor">Reference</a></h2>
+
+<pre class="no-highlight">{
+  "id": 55807,
+  "name": "ALC Steaks (Austin Land &amp; Cattle)",
+  "address": "1205 N. Lamar Blvd",
+  "city": "Austin",
+  "state": "TX",
+  "area": "Austin",
+  "postal_code": "78703",
+  "country": "US",
+  "phone": "5124721813",
+  "reserve_url": "http://www.opentable.com/single.aspx?rid=55807",
+  "mobile_reserve_url": "http://mobile.opentable.com/opentable/?restId=55807"
+}</pre>
+
+
+<p>To generate a proper reservation link just ref parameter with your affiliate ID to reserve_url or mobile_reserve_url</p>
+
+<h2 id="consuming-api"><a href="#consuming-api" class="anchor">Consuming API</a></h2>
+
+<p>You can use simple client library i wrote — https://gist.github.com/2504683</p>
+
+<p>Example:</p>
+
+<pre class="no-highlight">api = OpenTable::Client.new
+
+# Find restaurants
+resp = api.restaurants(:city =&gt; "Chicago")
+
+# Process response
+resp['count']       # =&gt; records found
+resp['restaurants'] # =&gt; restaurant records
+
+# Fetch a single record
+api.restaurant(81169)</pre>
+
+
+<h2 id="disclaimer"><a href="#disclaimer" class="anchor">Disclaimer</a></h2>
+
+<p>This service is not affiliated with OpenTable Inc., any of its products or employees.
+All content is represented as is and does not have any modifications to the original data except additional fields listed under reference section.</p>
+
+<p>For additional information you can contact developer via <a href="mailto:%20dan.sosedoff@gmail.com">email</a></p>

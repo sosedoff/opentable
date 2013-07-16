@@ -21,20 +21,6 @@ helpers do
   def build_regex(val)
     Regexp.new(Regexp.escape(val), Regexp::IGNORECASE)
   end
-
-  def render_markdown(body, highlight=true)
-    data = body.gsub(/^``` ?([^\r\n]+)?\r?\n(.+?)\r?\n```\r?$/m) do
-      lang = $1 || 'no-highlight'
-      if highlight && !$1.to_s.empty?
-        str = "<pre class='#{lang}'>#{$2}</pre>"
-      else
-        str = "<pre class='#{lang}'>#{$2}</pre>"
-      end
-      str
-    end
-
-    Docify.render(data, 'markdown')
-  end
 end
 
 not_found do
@@ -42,7 +28,6 @@ not_found do
 end
 
 get '/' do 
-  @readme = File.read('./README.md')
   erb :index
 end
 
