@@ -97,7 +97,7 @@ get '/api/restaurants' do
     filters[:postal_code] = params[:zip].to_s.strip
   end
 
-  page = params[:page] || 1
+  page = (params[:page] || 1).to_i
   per_page = 25
 
   results = Restaurant.
@@ -105,10 +105,10 @@ get '/api/restaurants' do
     paginate(:page => page, :per_page => per_page)
 
   success_response(
-    :count        => results.size, 
-    :per_page     => per_page,
-    :current_page => page,
-    :restaurants  => results
+    total_entries: results.size,
+    per_page:      per_page,
+    current_page:  page,
+    restaurants:   results
   )
 end
 
