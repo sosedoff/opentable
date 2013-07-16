@@ -53,7 +53,7 @@ end
 
 get '/api/cities' do
   results = Restaurant.collection.distinct('city').sort
-  success_response(:count  => results.size, :cities => results)
+  success_response(:count => results.size, :cities => results)
 end
 
 get '/api/restaurants' do
@@ -82,6 +82,16 @@ get '/api/restaurants' do
 
   if params[:city]
     filters[:city] = build_regex(params[:city].to_s.strip)
+  end
+
+  country = params[:country].to_s.upcase
+
+  unless country.empty?
+    if Restaurant.valid_country?(country)
+      filters[:country] = country
+    else
+      error_response("Invalid country. Use one of #{Restaurant::COUNTRIES.join(', ')}")
+    end
   end
 
   if params[:country]

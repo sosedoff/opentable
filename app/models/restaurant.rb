@@ -1,4 +1,6 @@
 class Restaurant
+  COUNTRIES = %w(US CA MX)
+
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Pagination
@@ -28,6 +30,10 @@ class Restaurant
 
   def as_json(options={})
     RestaurantPresenter.new(self, options).to_hash
+  end
+
+  def self.valid_country?(code)
+    COUNTRIES.include?(code)
   end
 
   def self.by_id(id)
