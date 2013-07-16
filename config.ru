@@ -1,8 +1,10 @@
-require 'rubygems'
-require 'bundler'
-require 'rack'
+require 'bundler/setup'
+require 'rack/contrib'
+require 'rack/revision'
+require './app'
 
-Bundler.require
-require './app.rb'
+use Rack::BounceFavicon
+use Rack::Revision
+use Rack::Runtime
 
 run Sinatra::Application
