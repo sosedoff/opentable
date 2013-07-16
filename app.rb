@@ -1,6 +1,6 @@
 require './boot'
 require 'sinatra'
-require 'sinatra/synchrony'
+require 'sinatra/reloader' if development?
 
 configure do
   set :protection, false
