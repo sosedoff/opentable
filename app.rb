@@ -10,12 +10,17 @@ end
 
 helpers do
   def error_response(message, code=400)
-    content_type(:json, :encoding => :utf8)
-    halt(code, {:error => message, :code => code}.to_json)
+    result = {
+      error: message, 
+      status: code
+    }
+
+    content_type(:json, encoding: 'utf8')
+    halt(code, result.to_json)
   end
 
   def success_response(data)
-    content_type(:json, :encoding => :utf8)
+    content_type(:json, encoding: 'utf8')
     data.to_json
   end
 
@@ -29,7 +34,7 @@ before do
 end
 
 not_found do
-  error_response("Invalid route", 404)
+  error_response("Invalid endpoint", 404)
 end
 
 get '/' do 
