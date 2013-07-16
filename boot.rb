@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] ||= 'development'
+
 $LOAD_PATH << File.dirname(__FILE__)
 
 require 'bundler/setup'
