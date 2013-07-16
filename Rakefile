@@ -18,8 +18,10 @@ namespace :opentable do
 
   desc 'Import and update a fresh OpenTable data'
   task :import => :environment do
+    countries = %w(US CA MX)
+
     parser  = OpenTable::Parser.new('/tmp/opentable.xls')
-    results = parser.parse { |row| row['country'] == 'US' }
+    results = parser.parse { |row| countries.include?(row['country'])
     records = Restaurant.import_records(results)
   end
 end
