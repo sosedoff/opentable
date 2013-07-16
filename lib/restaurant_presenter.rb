@@ -2,7 +2,7 @@ class RestaurantPresenter
   attr_reader :restaurant, :options
 
   def initialize(restaurant, options={})
-    unless restaurant.kind_of?(OpenRestaurant)
+    unless restaurant.kind_of?(Restaurant)
       raise ArgumentError, "OpenRestaurant instance required"
     end
 

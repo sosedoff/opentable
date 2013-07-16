@@ -47,12 +47,12 @@ get '/' do
 end
 
 get '/api/countries' do
-  results = OpenRestaurant.collection.distinct('country').sort
+  results = Restaurant.collection.distinct('country').sort
   success_response(:count => results.size, :countries => results)
 end
 
 get '/api/cities' do
-  results = OpenRestaurant.collection.distinct('city').sort
+  results = Restaurant.collection.distinct('city').sort
   success_response(:count  => results.size, :cities => results)
 end
 
@@ -95,7 +95,7 @@ get '/api/restaurants' do
   page = params[:page] || 1
   per_page = 25
 
-  results = OpenRestaurant.
+  results = Restaurant.
     where(filters).
     paginate(:page => page, :per_page => per_page)
 
@@ -108,7 +108,7 @@ get '/api/restaurants' do
 end
 
 get '/api/restaurants/:id' do
-  record = OpenRestaurant.by_id(params[:id])
+  record = Restaurant.by_id(params[:id])
   if record.nil?
     error_response("Restaurant was not found.", 404)
   end

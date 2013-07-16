@@ -5,8 +5,8 @@ require 'yaml'
 require 'mongoid'
 require 'mongoid-pagination'
 
+require 'app/models/restaurant'
 require 'lib/restaurant_presenter'
-require 'lib/open_restaurant'
 
 root_dir = File.dirname(__FILE__)
 
