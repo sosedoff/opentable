@@ -5,8 +5,6 @@ class Restaurant
   include Mongoid::Timestamps
   include Mongoid::Pagination
 
-  self.collection_name = 'open_restaurants'
-
   field :restaurant_id, type: Integer
   field :name
   field :address
