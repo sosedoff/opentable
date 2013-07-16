@@ -2,6 +2,8 @@ require './boot'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
+VERSION = '1.0.0'
+
 configure do
   set :protection, false
 end
@@ -20,6 +22,10 @@ helpers do
   def build_regex(val)
     Regexp.new(Regexp.escape(val), Regexp::IGNORECASE)
   end
+end
+
+before do
+  headers['X-Api-Version'] = VERSION
 end
 
 not_found do
