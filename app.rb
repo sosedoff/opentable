@@ -1,7 +1,6 @@
 require './boot'
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require 'docify'
 
 configure do
   set :protection, false
