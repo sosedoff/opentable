@@ -21,7 +21,7 @@ namespace :opentable do
     countries = %w(US CA MX)
 
     parser  = OpenTable::Parser.new('/tmp/opentable.xls')
-    results = parser.parse { |row| countries.include?(row['country'])
+    results = parser.parse { |row| countries.include?(row['country']) }
     records = Restaurant.import_records(results)
   end
 end

@@ -16,7 +16,7 @@ module OpenTable
     # Parses rows and returns an array with formatted hashes
     # @return [Array<Hash>]
     def parse
-      doc = Excel.new(@path)
+      doc = Roo::Excel.new(@path)
       doc.default_sheet = doc.sheets.first
       results = []
 
