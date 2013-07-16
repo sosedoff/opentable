@@ -1,4 +1,4 @@
-require 'iconv'
+#require 'iconv'
 require 'roo'
 
 module OpenTable
