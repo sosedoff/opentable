@@ -1,28 +1,24 @@
 class RestaurantPresenter
-  attr_reader :restaurant, :options
+  attr_reader :record, :options
 
-  def initialize(restaurant, options={})
-    unless restaurant.kind_of?(Restaurant)
-      raise ArgumentError, "OpenRestaurant instance required"
-    end
-
-    @restaurant = restaurant
-    @options    = options
+  def initialize(record, options={})
+    @record  = record
+    @options = options
   end
 
   def to_hash
     {
-      'id'                 => restaurant.restaurant_id,
-      'name'               => restaurant.name,
-      'address'            => restaurant.address,
-      'city'               => restaurant.city,
-      'state'              => restaurant.state,
-      'area'               => restaurant.metro_name,
-      'postal_code'        => restaurant.postal_code,
-      'country'            => restaurant.country,
-      'phone'              => restaurant.phone,
-      'reserve_url'        => "http://www.opentable.com/single.aspx?rid=#{restaurant.restaurant_id}",
-      'mobile_reserve_url' => "http://mobile.opentable.com/opentable/?restId=#{restaurant.restaurant_id}",
+      'id'                 => record.restaurant_id,
+      'name'               => record.name,
+      'address'            => record.address,
+      'city'               => record.city,
+      'state'              => record.state,
+      'area'               => record.metro_name,
+      'postal_code'        => record.postal_code,
+      'country'            => record.country,
+      'phone'              => record.phone,
+      'reserve_url'        => "http://www.opentable.com/single.aspx?rid=#{record.restaurant_id}",
+      'mobile_reserve_url' => "http://mobile.opentable.com/opentable/?restId=#{record.restaurant_id}",
     }
   end
 end
