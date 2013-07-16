@@ -8,7 +8,7 @@ require 'mongoid'
 require 'mongoid-pagination'
 
 require 'app/models/restaurant'
-require 'lib/restaurant_presenter'
+require 'app/presenters/restaurant_presenter'
 
 root_dir = File.dirname(__FILE__)
 
