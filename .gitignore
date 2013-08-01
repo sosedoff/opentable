@@ -25,5 +25,3 @@ tmp
 tmtags
 public/static/**/*
 REVISION
-mongoid.yml
-opentable.yml

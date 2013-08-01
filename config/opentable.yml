@@ -1,0 +1,3 @@
+:host: ENV["OT_HOST"]
+:user: ENV["OT_USER"]
+:password: ENV["OT_PASSWORD"]
