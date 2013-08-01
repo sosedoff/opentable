@@ -11,9 +11,9 @@ module OpenTable
     # Initialize a new downloader instance
     # @param options [Hash] downloader options
     def initialize(options={})
-      @host     = options[:host]
-      @user     = options[:user]
-      @password = options[:password]
+      @host     = options[:host]     || ENV['OT_HOST']
+      @user     = options[:user]     || ENV['OT_USER']
+      @password = options[:password] || ENV['OT_PASSWORD']
     end
 
     # Download data snapshot to the target directory
