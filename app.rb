@@ -110,9 +110,11 @@ end
 
 get '/api/restaurants/:id' do
   record = Restaurant.by_id(params[:id])
+
   if record.nil?
-    error_response("Restaurant was not found.", 404)
+    error_response("Restaurant does not exist", 404)
   end
+
   success_response(record)
 end
 
