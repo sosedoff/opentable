@@ -33,10 +33,6 @@ before do
   headers['X-Api-Version'] = VERSION
 end
 
-not_found do
-  error_response("Invalid endpoint", 404)
-end
-
 get '/' do 
   erb :index
 end
@@ -118,4 +114,8 @@ get '/api/restaurants/:id' do
     error_response("Restaurant was not found.", 404)
   end
   success_response(record)
+end
+
+get "/*" do
+  error_response("Invalid endpoint", 404)
 end
