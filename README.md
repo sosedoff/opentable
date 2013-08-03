@@ -1,6 +1,8 @@
 # Unofficial OpenTable API
 
-This project was created for one purpose — to make OpenTable data easily accesible to developers. No longer do you have to download XLS file, parse it and insert into your app's database.
+This project was created for one purpose — to make OpenTable data easily
+accesible to developers. No longer do you have to download XLS file, parse it
+and insert into your app's database.
 
 Created by Dan Sosedoff during #railsconf 2012 in Austin, TX
 
@@ -104,7 +106,9 @@ api.restaurant(81169)
 
 ## Disclaimer
 
-This service is not affiliated with OpenTable Inc., any of its products or employees.
-All content is represented as is and does not have any modifications to the original data except additional fields listed under reference section.
+This service is not affiliated with OpenTable Inc., any of its products or
+employees. All content is represented as is and does not have any modifications
+to the original data except additional fields listed under reference section.
 
-For additional information you can contact developer via [email](mailto: dan.sosedoff@gmail.com)
+For additional information you can contact developer via [email](mailto:
+dan.sosedoff@gmail.com)
