@@ -34,6 +34,14 @@ class Restaurant
     COUNTRIES.include?(code)
   end
 
+  def self.unique_countries
+    Restaurant.collection.distinct('country').sort
+  end
+
+  def self.unique_cities
+    Restaurant.collection.distinct('city').compact.sort
+  end
+
   def self.by_id(id)
     Restaurant.where(restaurant_id: id).first
   end

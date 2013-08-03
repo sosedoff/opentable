@@ -33,18 +33,18 @@ before do
   headers['X-Api-Version'] = VERSION
 end
 
-get '/' do 
+get "/" do
   erb :index
 end
 
-get '/api/countries' do
-  results = Restaurant.collection.distinct('country').sort
-  success_response(:count => results.size, :countries => results)
+get "/api/countries" do
+  results = Restaurant.unique_countries
+  success_response(count: results.size, countries: results)
 end
 
 get '/api/cities' do
-  results = Restaurant.collection.distinct('city').sort
-  success_response(:count => results.size, :cities => results)
+  results = Restaurant.unique_cities
+  success_response(count: results.size, cities: results)
 end
 
 get '/api/restaurants' do
