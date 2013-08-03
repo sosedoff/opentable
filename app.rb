@@ -23,10 +23,6 @@ helpers do
     content_type(:json, encoding: 'utf8')
     data.to_json
   end
-
-  def build_regex(val)
-    Regexp.new(Regexp.escape(val), Regexp::IGNORECASE)
-  end
 end
 
 before do
@@ -52,60 +48,19 @@ get '/api/restaurants' do
     error_response("At least one parameter required.")
   end
 
-  filters = {}
-
-  if params[:name]
-    str = params[:name].to_s.strip
-    if str.empty?
-      error_response("Name should not be empty.")
-    end
-    filters[:name] = build_regex(str)
+  begin
+    search = Search.new(params)
+    results = search.results
+    
+    success_response(
+      total_entries: results.size,
+      per_page:      search.per_page,
+      current_page:  search.page,
+      restaurants:   results
+    )
+  rescue SearchError => err
+    error_response(err.message)
   end
-
-  if params[:address]
-    str = params[:address].to_s.strip
-    filters[:address] = build_regex(str)
-  end
-
-  if params[:state]
-    filters[:state] = params[:state].to_s.upcase
-  end
-
-  if params[:city]
-    filters[:city] = build_regex(params[:city].to_s.strip)
-  end
-
-  country = params[:country].to_s.upcase
-
-  unless country.empty?
-    if Restaurant.valid_country?(country)
-      filters[:country] = country
-    else
-      error_response("Invalid country. Use one of #{Restaurant::COUNTRIES.join(', ')}")
-    end
-  end
-
-  if params[:country]
-    filters[:country] = params[:country].to_s.strip
-  end
-
-  if params[:zip]
-    filters[:postal_code] = params[:zip].to_s.strip
-  end
-
-  page = (params[:page] || 1).to_i
-  per_page = 25
-
-  results = Restaurant.
-    where(filters).
-    paginate(:page => page, :per_page => per_page)
-
-  success_response(
-    total_entries: results.size,
-    per_page:      per_page,
-    current_page:  page,
-    restaurants:   results
-  )
 end
 
 get '/api/restaurants/:id' do
