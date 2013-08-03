@@ -2,7 +2,7 @@ require './boot'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 
 configure do
   set :protection, false
