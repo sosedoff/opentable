@@ -8,8 +8,10 @@ Created by Dan Sosedoff during #railsconf 2012 in Austin, TX
 
 ## Usage
 
-- API Endpoint: http://opentable.heroku.com/api
-- Response Format: JSON
+- API Endpoint: http://opentable.herokuapp.com/api
+- Response Format: JSON (JSONP is supported too)
+- No authentication required
+- API is throttled with 1000 requests per hour.
 
 ### List all cities
 
