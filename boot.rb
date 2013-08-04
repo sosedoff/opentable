@@ -12,6 +12,7 @@ require 'app/models/restaurant'
 require 'app/presenters/restaurant_presenter'
 require 'lib/open_table'
 require 'lib/search'
+require 'lib/redis_store'
 
 root_dir = File.dirname(__FILE__)
 
