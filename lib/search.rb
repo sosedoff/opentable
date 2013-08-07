@@ -39,7 +39,11 @@ class Search
 
   def init_pagination
     @page     = (params[:page] || 1).to_i
-    @per_page = 25
+    @per_page = (params[:per_page] || 25).to_i
+
+    unless [5, 10, 15, 25, 50, 100].include?(@per_page)
+      raise SearchError, "Invalid pagination option: per_page"
+    end
   end
 
   def results
