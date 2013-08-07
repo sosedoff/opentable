@@ -1,11 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (3.2.13)
-      activesupport (= 3.2.13)
+    activemodel (3.2.14)
+      activesupport (= 3.2.14)
       builder (~> 3.0.0)
-    activesupport (3.2.13)
-      i18n (= 0.6.1)
+    activesupport (3.2.14)
+      i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     backports (3.3.3)
     bson (1.9.1)
@@ -14,7 +14,7 @@ GEM
     builder (3.0.4)
     daemons (1.1.9)
     eventmachine (1.0.3)
-    i18n (0.6.1)
+    i18n (0.6.4)
     mini_portile (0.5.1)
     mongo (1.9.1)
       bson (~> 1.9.1)
@@ -25,7 +25,7 @@ GEM
     mongoid-pagination (0.2.0)
       activesupport
       mongoid
-    multi_json (1.7.7)
+    multi_json (1.7.8)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     rack (1.5.2)
@@ -76,7 +76,7 @@ DEPENDENCIES
   bson_ext (~> 1.9)
   mongo (~> 1.9)
   mongoid (~> 2.4)
-  mongoid-pagination (~> 0.1)
+  mongoid-pagination (~> 0.2)
   rack-attack (~> 2.2)
   rack-contrib (~> 1.1)
   rack-revision (~> 1.0)
