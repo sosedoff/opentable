@@ -51,7 +51,7 @@ class Search
   end
 
   def paginate_options
-    { per_page: per_page, page: page }
+    { page: page, limit: per_page }
   end
 
   def filters
