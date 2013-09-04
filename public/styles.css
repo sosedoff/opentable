@@ -4,8 +4,8 @@ html, body {
 }
 
 body {
-  background: #eee;
-  font: 13px helvetica,arial,freesans,clean,sans-serif;
+  background: #fff;
+  font: 14px helvetica,arial,freesans,clean,sans-serif;
 }
 
 body * { line-height: 1.4em; }
@@ -14,18 +14,13 @@ body {
   padding: 20px;
 }
 
-a { color: #4183C4; text-decoration: none; }
+a { color: #4183C4; text-decoration: underline; }
 a:hover { text-decoration: underline; }
 
 #wrapper {
   width: 700px;
   margin: 0px auto;
-  background: #fff;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
 }
 
 p {
@@ -34,6 +29,11 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 { border: 0 !important; }
+h1 a, h2 a, h3 a, h4 a, h5 a {
+  color: #000;
+  border: 0px none;
+  text-decoration: none;
+}
 
 h1 {
   font-size: 170%!important;
@@ -46,8 +46,7 @@ h1:first-child { border-top: none !important; }
 
 h2 { 
   font-size: 150% !important;
-  margin-top: 1.5em !important;
-  border-top: 4px solid #E0E0E0 !important;
+  margin-top: 0em !important;
   padding-top: .5em !important;
 }
 
