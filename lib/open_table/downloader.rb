@@ -4,7 +4,7 @@ require 'net/ftp'
 module OpenTable
   class Downloader
     REGEX_NEW = /(Affiliates - New Online Restaurant [\d]{1,}\.[\d]{1,}\.[\d]{1,} - [\d]{1,}\.[\d]{1,}\.[\d]{1,}.xls)/i
-    REGEX_ALL = /(Affiliates - OpenTable Restaurant List [\d]{1,}\.[\d]{1,}\.[\d]{1,} - [\d]{1,}\.[\d]{1,}\.[\d]{1,}.xls)/i
+    REGEX_ALL = /^Affiliates - OpenTable Restaurant List/i
 
     attr_reader :host, :user, :password
 
