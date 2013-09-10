@@ -123,3 +123,7 @@ to the original data
 - [dan.sosedoff@gmail.com](mailto:dan.sosedoff@gmail.com)
 - [http://twitter.com/dan_sosedoff](http://twitter.com/dan_sosedoff)
 - [https://github.com/sosedoff/opentable](https://github.com/sosedoff/opentable)
+
+## License
+
+This software is distributed under MIT license
