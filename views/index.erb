@@ -1,14 +1,19 @@
 <h1 id="unofficial-opentable-api"><a href="#unofficial-opentable-api" class="anchor">Unofficial OpenTable API</a></h1>
 
-<p>This project was created for one purpose — to make OpenTable data easily accesible to developers. No longer do you have to download XLS file, parse it and insert into your app's database.</p>
+<p>This project provides an unofficial json API interface to search OpenTable
+restaurant data. It eliminates the need to download, parse and import
+data from XLS file.</p>
 
-<p>Created by Dan Sosedoff during #railsconf 2012 in Austin, TX</p>
+<p>Its an open-source project, view <a href="https://github.com/sosedoff/opentable">source on github</a>.</p>
 
 <h2 id="usage"><a href="#usage" class="anchor">Usage</a></h2>
 
 <ul>
-<li>API Endpoint: http://opentable.heroku.com/api</li>
-<li>Response Format: JSON</li>
+<li>API endpoint: <a href="http://opentable.herokuapp.com/api">http://opentable.herokuapp.com/api</a></li>
+<li>Secure API endpoint: <a href="https://opentable.herokuapp.com/api">https://opentable.herokuapp.com/api</a></li>
+<li>Response Format: JSON (JSONP is supported too)</li>
+<li>No authentication or API tokens required</li>
+<li>API is throttled with 1000 requests per hour per IP address</li>
 </ul>
 
 
@@ -65,6 +70,8 @@
 
 <h2 id="reference"><a href="#reference" class="anchor">Reference</a></h2>
 
+<p>Restaurant attributes:</p>
+
 <pre class="no-highlight">{
   "id": 55807,
   "name": "ALC Steaks (Austin Land &amp; Cattle)",
@@ -84,26 +91,39 @@
 
 <h2 id="consuming-api"><a href="#consuming-api" class="anchor">Consuming API</a></h2>
 
-<p>You can use simple client library i wrote — https://gist.github.com/2504683</p>
+<p>You can use simple client library i wrote — <a href="https://gist.github.com/2504683">https://gist.github.com/2504683</a></p>
 
 <p>Example:</p>
 
-<pre class="no-highlight">api = OpenTable::Client.new
+<pre class="ruby">api = <span class="constant">OpenTable::Client</span>.new
 
-# Find restaurants
-resp = api.restaurants(:city =&gt; "Chicago")
+<span class="comment"># Find restaurants</span>
+resp = api.restaurants(<span class="symbol">:city</span> =&gt; <span class="string">"Chicago"</span>)
 
-# Process response
-resp['count']       # =&gt; records found
-resp['restaurants'] # =&gt; restaurant records
+<span class="comment"># Process response</span>
+resp[<span class="string">'count'</span>]       <span class="comment"># =&gt; records found</span>
+resp[<span class="string">'restaurants'</span>] <span class="comment"># =&gt; restaurant records</span>
 
-# Fetch a single record
-api.restaurant(81169)</pre>
+<span class="comment"># Fetch a single record</span>
+api.restaurant(<span class="number">81169</span>)</pre>
 
 
 <h2 id="disclaimer"><a href="#disclaimer" class="anchor">Disclaimer</a></h2>
 
-<p>This service is not affiliated with OpenTable Inc., any of its products or employees.
-All content is represented as is and does not have any modifications to the original data except additional fields listed under reference section.</p>
+<ul>
+<li>This service is not affiliated with OpenTable Inc., any of its products or
+employees.</li>
+<li>All content is represented as is and does not have any modifications
+to the original data</li>
+<li>Restaurant data has extra columns to simplify integration with OpenTable website</li>
+</ul>
 
-<p>For additional information you can contact developer via <a href="mailto:%20dan.sosedoff@gmail.com">email</a></p>
+
+<h2 id="contact"><a href="#contact" class="anchor">Contact</a></h2>
+
+<ul>
+<li>Dan Sosedoff</li>
+<li><a href="mailto:dan.sosedoff@gmail.com">dan.sosedoff@gmail.com</a></li>
+<li><a href="http://twitter.com/dan_sosedoff">http://twitter.com/dan_sosedoff</a></li>
+<li><a href="https://github.com/sosedoff/opentable">https://github.com/sosedoff/opentable</a></li>
+</ul>
