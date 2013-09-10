@@ -30,10 +30,15 @@ module OpenTable
         end
       end
 
+      puts "Establishing FTP connection to #{host}"
+
       Net::FTP.open(host) do |ftp|
+        puts "Connected. Authenticating with #{user}:#{password}"
+
         ftp.login(user, password)
         files = ftp.list
 
+        puts "Downloading file..."
         files.each do |f|
           if f =~ REGEX_ALL
             ftp.getbinaryfile("#{$1}", path)
