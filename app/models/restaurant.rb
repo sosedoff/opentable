@@ -1,5 +1,5 @@
 class Restaurant
-  COUNTRIES = %w(US CA MX)
+  COUNTRIES = %w(AE AN AW CA CH CN GP HK KY MO MX MY PT SG SV US VI)
 
   include Mongoid::Document
   include Mongoid::Timestamps
