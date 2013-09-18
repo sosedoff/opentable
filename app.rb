@@ -76,3 +76,15 @@ end
 get "/*" do
   error_response("Invalid endpoint", 404)
 end
+
+post "/*" do
+  error_response("Invalid endpoint", 404)
+end
+
+put "/*" do
+  error_response("Invalid endpoint", 404)
+end
+
+delete "/*" do
+  error_response("Invalid endpoint", 404)
+end
