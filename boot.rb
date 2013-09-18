@@ -1,13 +1,19 @@
 ENV['RACK_ENV'] ||= 'development'
 
 $LOAD_PATH << File.dirname(__FILE__)
+require "bundler/setup"
 
-require 'bundler/setup'
-require 'yaml'
-require 'mongoid'
-require 'mongoid-pagination'
-require 'redis'
+# Load vars from .env filr
+require "dotenv"
+Dotenv.load
 
+# Basic gems
+require "yaml"
+require "mongoid"
+require "mongoid-pagination"
+require "redis"
+
+# App files
 require 'app/models/restaurant'
 require 'app/presenters/restaurant_presenter'
 require 'lib/open_table'
