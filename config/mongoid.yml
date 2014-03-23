@@ -16,9 +16,9 @@ test:
 
 production:
   <<: *defaults
-  host: <%= ENV['MONGO_HOST'] %>
-  port: <%= ENV['MONGO_PORT'] || 27737 %>
-  database: <%= ENV['MONGO_DB'] %>
-  username: <%= ENV['MONGO_USER'] %>
-  password: <%= ENV['MONGO_PASS'] %>
+  host: <%= ENV["MONGO_HOST"] %>
+  port: <%= ENV["MONGO_PORT"] || 27737 %>
+  database: <%= ENV["MONGO_DB"] %>
+  username: <%= ENV["MONGO_USER"] %>
+  password: <%= ENV["MONGO_PASS"] %>
   logger: false
