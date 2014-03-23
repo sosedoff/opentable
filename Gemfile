@@ -17,3 +17,11 @@ gem "rack-contrib",       "~> 1.1"
 gem "rack-revision",      "~> 1.0"
 gem "rack-attack",        "~> 2.2"
 gem "dotenv",             "~> 0.9"
+
+group :development, :test do
+  gem "rspec",            "~> 2.13"
+  gem "rack-test",        "~> 0.6"
+  gem "database_cleaner", "~> 1.2"
+  gem "simplecov",        "~> 0.8"
+  gem "fabrication",      "~> 2.9"
+end
