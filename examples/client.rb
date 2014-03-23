@@ -15,8 +15,8 @@ module OpenTable
       end
     end
 
-    def request(method, path, params={}, raw=false)
-      headers = {'Accept' => 'application/json'}
+    def request(method, path, params = {}, raw = false)
+      headers = { "Accept" => "application/json" }
       path = "/api#{path}"
 
       response = connection.send(method, path, params) do |request|
@@ -30,7 +30,7 @@ module OpenTable
       raw ? response : response.body
     end
 
-    def get(path, params={})
+    def get(path, params = {})
       request(:get, path, params)
     end
   end
@@ -42,11 +42,11 @@ module OpenTable
       get("/countries")
     end
 
-    def cities(country=nil)
+    def cities(country = nil)
       get("/cities")
     end
 
-    def restaurants(options={})
+    def restaurants(options = {})
       get("/restaurants", options)
     end
 
