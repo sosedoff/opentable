@@ -1,7 +1,9 @@
 ENV["RACK_ENV"] = "test"
 
 require "simplecov"
-SimpleCov.start
+SimpleCov.start do
+  add_filter ".bundle"
+end
 
 require "sinatra"
 require "rack/test"
