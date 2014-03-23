@@ -6,6 +6,9 @@ data from XLS file.
 
 Its an open-source project, view [source on github](https://github.com/sosedoff/opentable).
 
+[![Build Status](https://magnum-ci.com/status/f8ce1e5474f73522230c2ababfd60bdf.png)](https://magnum-ci.com/public/19e5fe572aa3a5144b97/builds)
+[![Code Climate](https://codeclimate.com/github/sosedoff/opentable.png)](https://codeclimate.com/github/sosedoff/opentable)
+
 ## Usage
 
 - API endpoint: [http://opentable.herokuapp.com/api](http://opentable.herokuapp.com/api)
