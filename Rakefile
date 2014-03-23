@@ -1,5 +1,12 @@
+require "rspec/core/rake_task"
+
 task :environment do
   require './boot'
+end
+
+RSpec::Core::RakeTask.new(:test) do |t|
+  t.pattern = "spec/**/*_spec.rb"
+  t.verbose = false
 end
 
 namespace :opentable do
@@ -23,3 +30,5 @@ namespace :opentable do
     records = Restaurant.import_records(results)
   end
 end
+
+task :default => :test
