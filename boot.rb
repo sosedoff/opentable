@@ -15,7 +15,7 @@ require "redis"
 
 # App files
 require 'app/models/restaurant'
-require 'app/presenters/restaurant_presenter'
+require 'app/serializers/restaurant_serializer'
 require 'lib/open_table'
 require 'lib/search'
 require 'lib/redis_store'

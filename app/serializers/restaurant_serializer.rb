@@ -1,4 +1,4 @@
-class RestaurantPresenter
+class RestaurantSerializer
   attr_reader :record, :options
 
   def initialize(record, options = {})

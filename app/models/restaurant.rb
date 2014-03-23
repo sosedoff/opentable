@@ -27,7 +27,7 @@ class Restaurant
   index :postal_code
 
   def as_json(options = {})
-    RestaurantPresenter.new(self, options).to_hash
+    RestaurantSerializer.new(self, options).to_hash
   end
 
   def self.valid_country?(code)
