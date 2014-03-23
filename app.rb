@@ -34,7 +34,7 @@ get "/" do
 end
 
 get "/api/countries" do
-  results = Restaurant.unique_countries
+  results = Restaurant.unique_countries.sort
   success_response(count: results.size, countries: results)
 end
 

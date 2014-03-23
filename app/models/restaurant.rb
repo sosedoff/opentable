@@ -26,7 +26,7 @@ class Restaurant
   index :state
   index :postal_code
 
-  def as_json(options={})
+  def as_json(options = {})
     RestaurantPresenter.new(self, options).to_hash
   end
 
@@ -35,11 +35,11 @@ class Restaurant
   end
 
   def self.unique_countries
-    Restaurant.collection.distinct('country').sort
+    Restaurant.collection.distinct("country").compact.sort
   end
 
   def self.unique_cities
-    Restaurant.collection.distinct('city').compact.sort
+    Restaurant.collection.distinct("city").compact.sort
   end
 
   def self.by_id(id)

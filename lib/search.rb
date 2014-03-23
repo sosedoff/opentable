@@ -23,7 +23,7 @@ class Search
       @country = params[:country].to_s.upcase
 
       unless Restaurant.valid_country?(@country)
-        raise SearchError, "Invalid country. Use one of #{Restaurant::COUNTRIES.join(', ')}"
+        raise SearchError, "Invalid country. Use one of: #{Restaurant::COUNTRIES.join(', ')}"
       end
     end
   end
@@ -42,7 +42,7 @@ class Search
     @per_page = (params[:per_page] || 25).to_i
 
     unless [5, 10, 15, 25, 50, 100].include?(@per_page)
-      raise SearchError, "Invalid pagination option: per_page"
+      raise SearchError, "Invalid per_page value"
     end
   end
 

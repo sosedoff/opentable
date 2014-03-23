@@ -1,3 +1,5 @@
+ENV["RACK_ENV"] = "test"
+
 require "simplecov"
 SimpleCov.start
 
@@ -5,8 +7,6 @@ require "sinatra"
 require "rack/test"
 require "fabrication"
 require "database_cleaner"
-
-ENV["RACK_ENV"] = "test"
 
 require File.join(File.dirname(__FILE__), "..", "app.rb")
 
@@ -16,20 +16,28 @@ Fabrication.configure do |config|
   config.sequence_start  = 10000
 end
 
+require "spec/fabricators/restaurant_fabricator"
+
 module ApiHelpers
   def json_response
     MultiJson.load(last_response.body)
+  end
+
+  def json_error
+    json_response["error"]
   end
 end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  config.include ApiHelpers
 
   config.before(:suite) do
-    # DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.strategy = :truncation
   end
 
   config.before(:each) do
+    DatabaseCleaner.clean
     Redis.current.flushall
   end
 
@@ -43,6 +51,7 @@ configure do
   set :run, false
   set :raise_errors, true
   set :logging, false
+  set :views, "views"
 end
 
 def fixture_path
