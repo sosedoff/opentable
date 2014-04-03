@@ -127,6 +127,8 @@ to the original data
 - [http://twitter.com/dan_sosedoff](http://twitter.com/dan_sosedoff)
 - [https://github.com/sosedoff/opentable](https://github.com/sosedoff/opentable)
 
+Please DO NOT contact me about services and products not related to this project.
+
 ## License
 
 This software is distributed under MIT license
