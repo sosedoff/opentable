@@ -5,7 +5,7 @@ class Search
   attr_reader :name, :address, :city, :state, :zip
   attr_reader :page, :per_page
 
-  def initialize(params={})
+  def initialize(params = {})
     @params = params
 
     init_pagination
@@ -28,7 +28,7 @@ class Search
     end
   end
 
-  def init_filter(field, regex=true)
+  def init_filter(field, regex = true)
     val = params[field]
 
     if val.present?
