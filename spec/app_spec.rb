@@ -17,7 +17,7 @@ describe "Application" do
     end
 
     it "renders home page" do
-      expect(last_response.body).to include "Unofficial OpenTable API"
+      expect(last_response.body).to include "OpenTable API"
     end
   end
 
