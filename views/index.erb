@@ -1,12 +1,12 @@
-<h1 id="unofficial-opentable-api"><a href="#unofficial-opentable-api" class="anchor">Unofficial OpenTable API</a></h1>
+<h1 id="opentable-api"><a href="#opentable-api" class="anchor">OpenTable API</a></h1>
 
 <p>This project provides an unofficial json API interface to search OpenTable
 restaurant data. It eliminates the need to download, parse and import
 data from XLS file.</p>
 
-<p>Its an open-source project, view <a href="https://github.com/sosedoff/opentable">source on github</a>.</p>
+<p>Its an open-source project, hosted on <a href="https://github.com/sosedoff/opentable">Github</a>.</p>
 
-<h2 id="usage"><a href="#usage" class="anchor">Usage</a></h2>
+<h2 id="overview"><a href="#overview" class="anchor">Overview</a></h2>
 
 <ul>
 <li>API endpoint: <a href="http://opentable.herokuapp.com/api">http://opentable.herokuapp.com/api</a></li>
@@ -15,6 +15,25 @@ data from XLS file.</p>
 <li>No authentication or API tokens required</li>
 <li>API is throttled with 1000 requests per hour per IP address</li>
 </ul>
+
+
+<p><a href="https://magnum-ci.com/public/19e5fe572aa3a5144b97/builds"><img src="https://magnum-ci.com/status/f8ce1e5474f73522230c2ababfd60bdf.png" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/sosedoff/opentable"><img src="https://codeclimate.com/github/sosedoff/opentable.png" alt="Code Climate"></a></p>
+
+<h2 id="endpoints"><a href="#endpoints" class="anchor">Endpoints</a></h2>
+
+<h3 id="get-data-stats"><a href="#get-data-stats" class="anchor">Get data stats</a></h3>
+
+<pre class="no-highlight">GET /api/stats</pre>
+
+
+<p>Returns response:</p>
+
+<pre class="no-highlight">{
+  "countries": 20,
+  "cities": 2700,
+  "restaurants": 25000
+}</pre>
 
 
 <h3 id="list-all-cities"><a href="#list-all-cities" class="anchor">List all cities</a></h3>
@@ -128,6 +147,8 @@ to the original data</li>
 <li><a href="https://github.com/sosedoff/opentable">https://github.com/sosedoff/opentable</a></li>
 </ul>
 
+
+<p>Please <strong>DO NOT</strong> contact me about services and products not related to this project.</p>
 
 <h2 id="license"><a href="#license" class="anchor">License</a></h2>
 
