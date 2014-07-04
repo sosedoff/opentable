@@ -4,18 +4,20 @@ This project provides an unofficial json API interface to search OpenTable
 restaurant data. It eliminates the need to download, parse and import
 data from XLS file. 
 
-Its an open-source project, view [source on github](https://github.com/sosedoff/opentable).
+Its an open-source project, hosted on [Github](https://github.com/sosedoff/opentable).
 
-[![Build Status](https://magnum-ci.com/status/f8ce1e5474f73522230c2ababfd60bdf.png)](https://magnum-ci.com/public/19e5fe572aa3a5144b97/builds)
-[![Code Climate](https://codeclimate.com/github/sosedoff/opentable.png)](https://codeclimate.com/github/sosedoff/opentable)
-
-## Usage
+## Overview
 
 - API endpoint: [http://opentable.herokuapp.com/api](http://opentable.herokuapp.com/api)
 - Secure API endpoint: [https://opentable.herokuapp.com/api](https://opentable.herokuapp.com/api)
 - Response Format: JSON (JSONP is supported too)
 - No authentication or API tokens required
 - API is throttled with 1000 requests per hour per IP address
+
+[![Build Status](https://magnum-ci.com/status/f8ce1e5474f73522230c2ababfd60bdf.png)](https://magnum-ci.com/public/19e5fe572aa3a5144b97/builds)
+[![Code Climate](https://codeclimate.com/github/sosedoff/opentable.png)](https://codeclimate.com/github/sosedoff/opentable)
+
+## Endpoints
 
 ### Get data stats
 
@@ -143,7 +145,7 @@ to the original data
 - [http://twitter.com/dan_sosedoff](http://twitter.com/dan_sosedoff)
 - [https://github.com/sosedoff/opentable](https://github.com/sosedoff/opentable)
 
-Please DO NOT contact me about services and products not related to this project.
+Please **DO NOT** contact me about services and products not related to this project.
 
 ## License
 
