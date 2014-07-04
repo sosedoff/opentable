@@ -127,7 +127,7 @@ describe "Application" do
         end
 
         it "returns error" do
-          expect(json_error).to eq "Invalid country. Use one of: AE, AN, AW, CA, CH, CN, GP, HK, KY, MO, MX, MY, PT, SG, SV, US, VI"
+          expect(json_error).to eq "Invalid country. Use one of: AE, AW, CA, CH, CN, CR, GP, HK, KN, KY, MC, MO, MX, MY, PT, SA, SG, SV, US, VI"
         end
       end
 
