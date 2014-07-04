@@ -1,4 +1,4 @@
-# Unofficial OpenTable API
+# OpenTable API
 
 This project provides an unofficial json API interface to search OpenTable
 restaurant data. It eliminates the need to download, parse and import
