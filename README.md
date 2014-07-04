@@ -17,6 +17,22 @@ Its an open-source project, view [source on github](https://github.com/sosedoff/
 - No authentication or API tokens required
 - API is throttled with 1000 requests per hour per IP address
 
+### Get data stats
+
+```
+GET /api/stats
+```
+
+Returns response:
+
+```
+{
+  "countries": 20,
+  "cities": 2700,
+  "restaurants": 25000
+}
+```
+
 ### List all cities
 
 ```
