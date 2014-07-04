@@ -21,6 +21,25 @@ describe "Application" do
     end
   end
 
+  describe "GET /api/stats" do
+    before do
+      Fabricate(:restaurant)
+      get "/api/stats"
+    end
+
+    it "responds with 200" do
+      expect(last_response.status).to eq 200
+    end
+
+    it "returns data stats" do
+      expect(json_response).to eq ({
+        "countries"   => 1,
+        "cities"      => 1,
+        "restaurants" => 1
+      })
+    end
+  end
+
   describe "GET /api/countries" do
     before do
       Fabricate(:restaurant, country: "United States")

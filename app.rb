@@ -33,6 +33,14 @@ get "/" do
   erb :index
 end
 
+get "/api/stats" do
+  success_response(
+    countries:   Restaurant.unique_countries.size,
+    cities:      Restaurant.unique_cities.size,
+    restaurants: Restaurant.count
+  )
+end
+
 get "/api/countries" do
   results = Restaurant.unique_countries.sort
   success_response(count: results.size, countries: results)
