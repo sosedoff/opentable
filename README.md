@@ -14,10 +14,12 @@ Its an open-source project, hosted on [Github](https://github.com/sosedoff/opent
 - No authentication or API tokens required
 - API is throttled with 1000 requests per hour per IP address
 
-[![Build Status](https://magnum-ci.com/status/f8ce1e5474f73522230c2ababfd60bdf.png)](https://magnum-ci.com/public/19e5fe572aa3a5144b97/builds)
-[![Code Climate](https://codeclimate.com/github/sosedoff/opentable.png)](https://codeclimate.com/github/sosedoff/opentable)
+## Project Status
 
-## Endpoints
+[![Build Status](http://img.shields.io/travis/sosedoff/opentable.svg?style=flat)](https://travis-ci.org/sosedoff/opentable)
+[![Code Climate](http://img.shields.io/codeclimate/github/sosedoff/opentable.svg?style=flat)](https://codeclimate.com/github/sosedoff/opentable)
+
+## API Reference
 
 ### Get data stats
 
@@ -88,7 +90,7 @@ GET /api/restaurants/:id
 
 Returns a single restaurant record, see reference for details.
 
-## Reference
+## Data Reference
 
 Restaurant attributes:
 
