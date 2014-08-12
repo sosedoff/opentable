@@ -5,7 +5,7 @@ html, body {
 
 body {
   background: #fff;
-  font: 15px helvetica,arial,freesans,clean,sans-serif;
+  font: 16px helvetica,arial,freesans,clean,sans-serif;
 }
 
 body * { line-height: 1.4em; }
@@ -15,7 +15,7 @@ body {
 }
 
 a { color: #4183C4; text-decoration: underline; }
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: none; }
 
 #wrapper {
   width: 700px;
@@ -36,7 +36,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a {
 }
 
 h1 {
-  font-size: 170%!important;
+  font-size: 36px;
   border-top: 4px solid #AAA!important;
   padding-top: 0px;
   margin-top: 0px;
@@ -45,12 +45,17 @@ h1 {
 h1:first-child { border-top: none !important; }
 
 h2 { 
-  font-size: 150% !important;
+  font-size: 28px;
   margin-top: 0em !important;
   padding-top: .5em !important;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee !important;
 }
 
-h3 { margin-top: 1em !important; }
+h3 { 
+  font-size: 24px;
+  margin-top: 1em !important;
+}
 
 pre, code {
   font: 12px 'Bitstream Vera Sans Mono','Courier',monospace;
@@ -58,11 +63,10 @@ pre, code {
 
 pre {
   margin: 1em 0;
-  font-size: 13px;
-  background-color: #fafafa;
-  border: 1px solid #ddd;
-  padding: 5px;
-  padding-left: 10px;
+  font-size: 14px;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  background-color: #f7f7f7;
+  padding: 16px;
   line-height: 1.4em;
   color: #444;
   overflow: auto;
@@ -72,11 +76,11 @@ pre {
 }
 
 code {
-  font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+  font: 13px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
   line-height: 1.4em;
   color: #444 !important;
-  padding: 0 .2em !important;
-  border: 1px solid #DEDEDE !important;
+  background-color: rgba(0,0,0,0.04);
+  padding: 2px 4px !important;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -86,7 +90,7 @@ p code {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  background-color: #fafafa;
+  background-color: #f7f7f7;
 }
 
 p span.info {
