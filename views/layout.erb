@@ -8,6 +8,7 @@
   <body>
     <div id="wrapper">
       <%= yield %>
+      <%= erb :ga if ENV["GA_CODE"] %>
     </div>
   </body>
 </html>
