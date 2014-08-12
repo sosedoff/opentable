@@ -24,4 +24,5 @@ group :development, :test do
   gem "database_cleaner", "~> 1.2"
   gem "simplecov",        "~> 0.8"
   gem "fabrication",      "~> 2.9"
+  gem "coveralls",        "~> 0.7"
 end

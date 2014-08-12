@@ -1,6 +1,12 @@
 ENV["RACK_ENV"] = "test"
 
 require "simplecov"
+
+if ENV["CI"]
+  require "coveralls"
+  Coveralls.wear!
+end
+
 SimpleCov.start do
   add_filter ".bundle"
 end
