@@ -16,8 +16,9 @@ Its an open-source project, hosted on [Github](https://github.com/sosedoff/opent
 
 ## Project Status
 
-[![Build Status](http://img.shields.io/travis/sosedoff/opentable.svg?style=flat)](https://travis-ci.org/sosedoff/opentable)
-[![Code Climate](http://img.shields.io/codeclimate/github/sosedoff/opentable.svg?style=flat)](https://codeclimate.com/github/sosedoff/opentable)
+- [![Build Status](http://img.shields.io/travis/sosedoff/opentable.svg?style=flat)](https://travis-ci.org/sosedoff/opentable)
+- [![Code Climate](http://img.shields.io/codeclimate/github/sosedoff/opentable.svg?style=flat)](https://codeclimate.com/github/sosedoff/opentable)
+- [![Coverage Status](https://img.shields.io/coveralls/sosedoff/opentable.svg?style=flat)](https://coveralls.io/r/sosedoff/opentable?branch=master)
 
 ## API Reference
 
