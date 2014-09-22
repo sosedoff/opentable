@@ -26,3 +26,7 @@ group :development, :test do
   gem "fabrication",      "~> 2.9"
   gem "coveralls",        "~> 0.7"
 end
+
+group :production do
+  gem "skylight", "0.3.20"
+end
