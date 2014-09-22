@@ -1,3 +1,3 @@
-if ENV["SKYLIGHT_TOKEN"]
+if ENV["SKYLIGHT_AUTHENTICATION"]
   require "skylight"
 end
