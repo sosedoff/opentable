@@ -28,5 +28,5 @@ group :development, :test do
 end
 
 group :production do
-  gem "skylight", "0.3.20"
+  gem "skylight", "0.3.20", require: false
 end
