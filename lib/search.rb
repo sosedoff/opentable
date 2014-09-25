@@ -12,14 +12,36 @@ class Search
   def initialize(params = {})
     @params = params
 
-    check_params
+    require_filters
     init_pagination
+    init_filters
+    validate_filters
+  end
 
+  def results
+    Restaurant.where(filters).paginate(paginate_options)
+  end
+
+  private
+
+  def require_filters
+    filters = params.select do |k,v|
+      FILTER_PARAMS.include?(k.to_s) && !v.to_s.blank?
+    end
+
+    if filters.size == 0
+      raise SearchError, "Please provide a search parameter"
+    end
+  end
+
+  def init_filters
     init_filter(:name)
     init_filter(:address)
     init_filter(:city)
     init_filter(:zip, false)
+  end
 
+  def validate_filters
     if params[:state].present?
       @state = params[:state].to_s.upcase
     end
@@ -51,10 +73,6 @@ class Search
     end
   end
 
-  def results
-    Restaurant.where(filters).paginate(paginate_options)
-  end
-
   def paginate_options
     { page: page, limit: per_page }
   end
@@ -68,14 +86,6 @@ class Search
       postal_code: @zip,
       country:     @country
     }.select { |_,v| v.present? }
-  end
-
-  private
-
-  def check_params
-    if params.select { |k,v| FILTER_PARAMS.include?(k.to_s) && !v.to_s.blank? }.size == 0
-      raise SearchError, "Please provide a search parameter"
-    end
   end
 
   def build_regex(val)
