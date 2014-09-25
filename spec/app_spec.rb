@@ -92,7 +92,7 @@ describe "Application" do
       end
 
       it "returns error" do
-        expect(json_error).to eq "At least one parameter required."
+        expect(json_error).to eq "Please provide a search parameter"
       end
     end
 

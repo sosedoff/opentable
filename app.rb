@@ -52,10 +52,6 @@ get "/api/cities" do
 end
 
 get "/api/restaurants" do
-  if params.empty? 
-    error_response("At least one parameter required.")
-  end
-
   begin
     search = Search.new(params)
     results = search.results

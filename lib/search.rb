@@ -1,6 +1,10 @@
 class SearchError < StandardError ; end
 
 class Search
+  FILTER_PARAMS = [
+    "name", "address", "city", "state", "zip", "country"
+  ]
+
   attr_reader :params
   attr_reader :name, :address, :city, :state, :zip
   attr_reader :page, :per_page
@@ -8,6 +12,7 @@ class Search
   def initialize(params = {})
     @params = params
 
+    check_params
     init_pagination
 
     init_filter(:name)
@@ -66,6 +71,12 @@ class Search
   end
 
   private
+
+  def check_params
+    if params.select { |k,v| FILTER_PARAMS.include?(k.to_s) && !v.to_s.blank? }.size == 0
+      raise SearchError, "Please provide a search parameter"
+    end
+  end
 
   def build_regex(val)
     Regexp.new(Regexp.escape(val), Regexp::IGNORECASE)
