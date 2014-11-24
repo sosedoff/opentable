@@ -71,7 +71,8 @@ Parameters: (at least one required)
 - `city` - City name (ex.: Chicago) *optional*
 - `zip` - Zipcode (ex: 60601) *optional*
 - `country` - Country code (ex: US) *optional*
-
+- `page` -  Page (default: 1)  *optional*
+- `per_page` - Entries per Page, can be one of [5, 10, 15, 25, 50, 100] (default: 25)  *optional*
 Returns response:
 
 ```
