@@ -10,7 +10,7 @@ module Rack
     def call(env)
       req = Rack::Request.new(env)
 
-      if req.path_info =~ /^api/
+      if req.path_info =~ /^\/api/
         env["geo"] = geolocate(req.ip)
       end
 
