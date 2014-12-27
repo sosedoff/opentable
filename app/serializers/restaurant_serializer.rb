@@ -18,7 +18,8 @@ class RestaurantSerializer
       "country"            => record.country,
       "phone"              => record.phone,
       "reserve_url"        => reserve_url,
-      "mobile_reserve_url" => mobile_reserve_url
+      "mobile_reserve_url" => mobile_reserve_url,
+      "image_url"          => image_url
     }
   end
 
@@ -30,5 +31,9 @@ class RestaurantSerializer
 
   def mobile_reserve_url
     "http://mobile.opentable.com/opentable/?restId=#{record.restaurant_id}"
+  end
+
+  def image_url
+    "https://www.opentable.com/img/restimages/#{record.restaurant_id}.jpg"
   end
 end
