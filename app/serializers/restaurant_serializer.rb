@@ -18,6 +18,7 @@ class RestaurantSerializer
       "phone"              => record.phone,
       "lat"                => record.latitude,
       "lng"                => record.longitude,
+      "price"              => record.price,
       "reserve_url"        => reserve_url,
       "mobile_reserve_url" => mobile_reserve_url,
       "image_url"          => image_url

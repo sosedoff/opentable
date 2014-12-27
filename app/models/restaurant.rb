@@ -17,6 +17,7 @@ class Restaurant
   field :latitude,  type: Float
   field :longitude, type: Float
   field :location,  type: Array
+  field :price, type: Integer
 
   validates :restaurant_id, presence: true, uniqueness: true
   validates :name,          presence: true

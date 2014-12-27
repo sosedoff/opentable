@@ -13,4 +13,5 @@ Fabricator(:restaurant) do
   phone "(123) 4567890"
   latitude 41.8807
   longitude -87.6278
+  price 3
 end
