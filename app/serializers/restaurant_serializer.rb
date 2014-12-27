@@ -1,9 +1,8 @@
 class RestaurantSerializer
-  attr_reader :record, :options
+  attr_reader :record
 
-  def initialize(record, options = {})
+  def initialize(record, options = nil)
     @record  = record
-    @options = options
   end
 
   def to_hash
