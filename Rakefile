@@ -11,6 +11,8 @@ if defined?(RSpec)
   end
 end
 
+task :default => :test
+
 task :environment do
   require "./boot"
 end
@@ -37,4 +39,11 @@ namespace :opentable do
   end
 end
 
-task :default => :test
+task :console => :environment do
+  require "irb"
+  require "irb/completion"
+  require "pp"
+  
+  ARGV.clear
+  IRB.start
+end
