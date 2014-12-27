@@ -16,7 +16,6 @@ module Rack
 
     def geolocate(env)
       ip = Rack::Request.new(env).ip
-      ip = "216.70.68.173"
       result = @geoip.country(ip)
 
       if result.country_code == 0
