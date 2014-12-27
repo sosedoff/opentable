@@ -147,7 +147,7 @@ to the original data
 
 - Dan Sosedoff
 - [dan.sosedoff@gmail.com](mailto:dan.sosedoff@gmail.com)
-- [http://twitter.com/dan_sosedoff](http://twitter.com/dan_sosedoff)
+- [http://twitter.com/sosedoff](http://twitter.com/sosedoff)
 - [https://github.com/sosedoff/opentable](https://github.com/sosedoff/opentable)
 
 Please **DO NOT** contact me about services and products not related to this project.
