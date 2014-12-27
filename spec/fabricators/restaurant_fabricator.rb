@@ -11,4 +11,6 @@ Fabricator(:restaurant) do
   postal_code "60657"
   country "United States"
   phone "(123) 4567890"
+  latitude 41.8807
+  longitude -87.6278
 end

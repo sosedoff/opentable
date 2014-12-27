@@ -180,6 +180,8 @@ describe "Application" do
           "postal_code"        => "60657",
           "country"            => "United States",
           "phone"              => "(123) 4567890",
+          "lat"                => 41.8807,
+          "lng"                => -87.6278,
           "reserve_url"        => "http://www.opentable.com/single.aspx?rid=#{restaurant_id}",
           "mobile_reserve_url" => "http://mobile.opentable.com/opentable/?restId=#{restaurant_id}",
           "image_url"          => "https://www.opentable.com/img/restimages/OT10031.jpg"

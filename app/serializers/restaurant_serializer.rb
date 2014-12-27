@@ -16,6 +16,8 @@ class RestaurantSerializer
       "postal_code"        => record.postal_code,
       "country"            => record.country,
       "phone"              => record.phone,
+      "lat"                => record.latitude,
+      "lng"                => record.longitude,
       "reserve_url"        => reserve_url,
       "mobile_reserve_url" => mobile_reserve_url,
       "image_url"          => image_url
