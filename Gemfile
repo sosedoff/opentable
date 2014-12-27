@@ -17,6 +17,7 @@ gem "rack-contrib",       "~> 1.1"
 gem "rack-revision",      "~> 1.0"
 gem "rack-attack",        "~> 2.2"
 gem "dotenv",             "~> 0.9"
+gem "geoip",              "~> 1.4"
 
 group :development, :test do
   gem "rspec",            "~> 2.13"

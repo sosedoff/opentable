@@ -29,6 +29,13 @@ before do
   headers["X-Api-Version"] = VERSION
 end
 
+after do
+  if request.env["geo"]
+    code = request.env["geo"][:country_code2]
+    Redis.current.hincrby("req_count", code, 1)
+  end
+end
+
 get "/" do
   erb :index
 end
