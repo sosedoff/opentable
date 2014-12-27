@@ -8,22 +8,20 @@ module Rack
     end
 
     def call(env)
-      env["geo"] = geolocate(env)
+      req = Rack::Request.new(env)
+
+      if req.path_info =~ /^api/
+        env["geo"] = geolocate(req.ip)
+      end
+
       @app.call(env)
     end
 
     private
 
-    def geolocate(env)
-      ip = Rack::Request.new(env).ip
+    def geolocate(ip)
       result = @geoip.country(ip)
-
-      if result.country_code == 0
-        return nil
-      end
-
-      result.to_hash
-
+      result.country_code == 0 ? nil : result.to_hash
     rescue StandardError => err
       STDERR.puts "GeoIp Error: #{err.inspect}"
       nil
