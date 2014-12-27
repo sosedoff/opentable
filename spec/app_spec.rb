@@ -4,7 +4,7 @@ describe "Application" do
   it "it includes api version in header" do
     get "/"
 
-    expect(last_response.headers["X-Api-Version"]).to eq "1.1.1"
+    expect(last_response.headers["X-Api-Version"]).to eq "1.2.0"
   end
 
   describe "GET /" do
