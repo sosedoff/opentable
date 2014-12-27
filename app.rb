@@ -40,6 +40,10 @@ get "/" do
   erb :index
 end
 
+get "/metrics" do
+  success_response(Redis.current.hgetall("req_count"))
+end
+
 get "/api/stats" do
   success_response(
     countries:   Restaurant.unique_countries.size,
