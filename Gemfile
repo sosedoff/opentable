@@ -18,6 +18,7 @@ gem "rack-revision",      "~> 1.0"
 gem "rack-attack",        "~> 2.2"
 gem "dotenv",             "~> 0.9"
 gem "geoip",              "~> 1.4"
+gem "skylight",           "0.6.0.beta.1"
 
 group :development, :test do
   gem "rspec",            "~> 2.13"

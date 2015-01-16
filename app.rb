@@ -8,6 +8,11 @@ configure do
   set :protection, false
 end
 
+configure :production do
+  require "skylight/sinatra"
+  Skylight.start!
+end
+
 helpers do
   def error_response(message, code=400)
     result = {
