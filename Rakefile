@@ -47,3 +47,9 @@ task :console => :environment do
   ARGV.clear
   IRB.start
 end
+
+namespace :redis do
+  task :flush => :environment do
+    Redis.current.flushall
+  end
+end
