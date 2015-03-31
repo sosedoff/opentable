@@ -1,6 +1,5 @@
 require "bundler/setup"
 require "rack/contrib"
-require "rack/revision"
 require "rack/attack"
 
 require "./app"
