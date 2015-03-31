@@ -49,8 +49,6 @@ GEM
       rack (>= 0.9.1)
     rack-protection (1.5.0)
       rack
-    rack-revision (1.0.1)
-      rack (>= 1.0)
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.1.0)
@@ -120,7 +118,6 @@ DEPENDENCIES
   mongoid-pagination (~> 0.2)
   rack-attack (~> 2.2)
   rack-contrib (~> 1.1)
-  rack-revision (~> 1.0)
   rack-test (~> 0.6)
   rake (~> 10)
   redcarpet (~> 2.1)
