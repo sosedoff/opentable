@@ -10,7 +10,6 @@ Rack::Attack.cache.store = RedisStore.new(Redis.current)
 Rack::Attack.throttle("reqs", limit: 1000, period: 1.hour) { |req| req.ip }
 
 use Rack::BounceFavicon
-use Rack::Revision
 use Rack::Runtime
 use Rack::JSONP
 use Rack::Attack
