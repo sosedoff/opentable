@@ -32,6 +32,7 @@ end
 
 before do
   headers["X-Api-Version"] = VERSION
+  headers["Access-Control-Allow-Origin"] = "*"
 end
 
 after do
