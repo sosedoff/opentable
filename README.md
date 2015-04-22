@@ -2,9 +2,7 @@
 
 This project provides an unofficial json API interface to search OpenTable
 restaurant data. It eliminates the need to download, parse and import
-data from XLS file. 
-
-Its an open-source project, hosted on [Github](https://github.com/sosedoff/opentable).
+data from XLS file. Its an open-source project, hosted on [Github](https://github.com/sosedoff/opentable).
 
 ## Overview
 
@@ -150,7 +148,7 @@ to the original data
 - [http://twitter.com/sosedoff](http://twitter.com/sosedoff)
 - [https://github.com/sosedoff/opentable](https://github.com/sosedoff/opentable)
 
-Please **DO NOT** contact me about services and products not related to this project.
+Please **DO NOT** contact author about services and products not related to this project.
 
 ## License
 
