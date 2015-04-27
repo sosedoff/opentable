@@ -23,19 +23,11 @@ namespace :opentable do
     Restaurant.delete_all
   end
 
-  desc "Download data snapshot"
-  task :download => :environment do
-    config     = YAML.load_file("./config/opentable.yml")
-    downloader = OpenTable::Downloader.new(config)
-
-    downloader.download_to("/tmp/opentable.xls", true)
-  end
-
   desc "Import and update a fresh OpenTable data"
   task :import => :environment do
-    parser  = OpenTable::Parser.new("/tmp/opentable.xls")
-    results = parser.parse
-    records = Restaurant.import_records(results)
+    parser  = OpenTable::Parser.new(ENV["CSV_FILE"])
+    Restaurant.delete_all
+    records = Restaurant.import_records(parser.parse)
   end
 end
 

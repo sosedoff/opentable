@@ -48,11 +48,8 @@ class Restaurant
   end
 
   def self.import_records(results)
-    results.map do |item|
-      r = Restaurant.by_id(item['restaurant_id']) || Restaurant.new
-      r.attributes = item
-      r.save
-      r
+    results.each_slice(100) do |batch|
+      collection.insert(batch)
     end
   end
 end
