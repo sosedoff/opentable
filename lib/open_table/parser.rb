@@ -26,7 +26,7 @@ module OpenTable
     private
 
     def read_data
-      if @path =~ /^http/i
+      if @path =~ /^https?:/i
         Net::HTTP.get(URI.parse(@path))
       else
         File.read(@path)
