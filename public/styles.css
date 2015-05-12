@@ -5,7 +5,8 @@ html, body {
 
 body {
   background: #fff;
-  font: 16px helvetica,arial,freesans,clean,sans-serif;
+  font-family: "Open Sans",sans-serif;
+  font-size: 15px;
 }
 
 body * { line-height: 1.4em; }
