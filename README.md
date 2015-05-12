@@ -63,14 +63,15 @@ GET /api/restaurants
 
 Parameters: (at least one required)
 
-- `name` - Name of the restaurant *optional*
-- `address` - Address line. Should not contain state or city or zip. *optional*
-- `state` - State code (ex.: IL) *optional*
-- `city` - City name (ex.: Chicago) *optional*
-- `zip` - Zipcode (ex: 60601) *optional*
-- `country` - Country code (ex: US) *optional*
-- `page` -  Page (default: 1)  *optional*
-- `per_page` - Entries per Page, can be one of [5, 10, 15, 25, 50, 100] (default: 25)  *optional*
+- `price` - Price range for the restaurant. Values: 1-4.
+- `name` - Name of the restaurant
+- `address` - Address line. Should not contain state or city or zip.
+- `state` - State code (ex.: IL)
+- `city` - City name (ex.: Chicago)
+- `zip` - Zipcode (ex: 60601)
+- `country` - Country code (ex: US)
+- `page` -  Page (default: 1) 
+- `per_page` - Entries per Page, can be one of [5, 10, 15, 25, 50, 100] (default: 25)
 
 Returns response:
 
@@ -89,25 +90,49 @@ Returns response:
 GET /api/restaurants/:id
 ```
 
-Returns a single restaurant record, see reference for details.
+Returns a single restaurant record, see reference for details. Example:
+
+```json
+{
+  "id": 107257,
+  "name": "Las Tablas Colombian Steak House",
+  "address": "2942 N Lincoln Ave",
+  "city": "Chicago",
+  "state": "IL",
+  "area": "Chicago / Illinois",
+  "postal_code": "60657",
+  "country": "US",
+  "phone": "7738712414",
+  "lat": 41.935137,
+  "lng": -87.662815,
+  "price": 2,
+  "reserve_url": "http://www.opentable.com/single.aspx?rid=107257",
+  "mobile_reserve_url": "http://mobile.opentable.com/opentable/?restId=107257",
+  "image_url": "https://www.opentable.com/img/restimages/107257.jpg"
+}
+```
 
 ## Data Reference
 
 Restaurant attributes:
 
-```
+```json
 {
-  "id": 55807,
-  "name": "ALC Steaks (Austin Land & Cattle)",
-  "address": "1205 N. Lamar Blvd",
-  "city": "Austin",
-  "state": "TX",
-  "area": "Austin",
-  "postal_code": "78703",
+  "id": 107257,
+  "name": "Las Tablas Colombian Steak House",
+  "address": "2942 N Lincoln Ave",
+  "city": "Chicago",
+  "state": "IL",
+  "area": "Chicago / Illinois",
+  "postal_code": "60657",
   "country": "US",
-  "phone": "5124721813",
-  "reserve_url": "http://www.opentable.com/single.aspx?rid=55807",
-  "mobile_reserve_url": "http://mobile.opentable.com/opentable/?restId=55807"
+  "phone": "7738712414",
+  "lat": 41.935137,
+  "lng": -87.662815,
+  "price": 2,
+  "reserve_url": "http://www.opentable.com/single.aspx?rid=107257",
+  "mobile_reserve_url": "http://mobile.opentable.com/opentable/?restId=107257",
+  "image_url": "https://www.opentable.com/img/restimages/107257.jpg"
 }
 ```
 
@@ -135,11 +160,10 @@ api.restaurant(81169)
 
 ## Disclaimer
 
-- This service is not affiliated with OpenTable Inc., any of its products or
+- This service IS NOT affiliated with OpenTable Inc., any of its products or
 employees. 
 - All content is represented as is and does not have any modifications
 to the original data
-- Restaurant data has extra columns to simplify integration with OpenTable website
 
 ## Contact
 

@@ -65,14 +65,15 @@ data from XLS file. Its an open-source project, hosted on <a href="https://githu
 <p>Parameters: (at least one required)</p>
 
 <ul>
-<li><code>name</code> - Name of the restaurant <em>optional</em></li>
-<li><code>address</code> - Address line. Should not contain state or city or zip. <em>optional</em></li>
-<li><code>state</code> - State code (ex.: IL) <em>optional</em></li>
-<li><code>city</code> - City name (ex.: Chicago) <em>optional</em></li>
-<li><code>zip</code> - Zipcode (ex: 60601) <em>optional</em></li>
-<li><code>country</code> - Country code (ex: US) <em>optional</em></li>
-<li><code>page</code> -  Page (default: 1)  <em>optional</em></li>
-<li><code>per_page</code> - Entries per Page, can be one of [5, 10, 15, 25, 50, 100] (default: 25)  <em>optional</em></li>
+<li><code>price</code> - Price range for the restaurant. Values: 1-4.</li>
+<li><code>name</code> - Name of the restaurant</li>
+<li><code>address</code> - Address line. Should not contain state or city or zip.</li>
+<li><code>state</code> - State code (ex.: IL)</li>
+<li><code>city</code> - City name (ex.: Chicago)</li>
+<li><code>zip</code> - Zipcode (ex: 60601)</li>
+<li><code>country</code> - Country code (ex: US)</li>
+<li><code>page</code> -  Page (default: 1)</li>
+<li><code>per_page</code> - Entries per Page, can be one of [5, 10, 15, 25, 50, 100] (default: 25)</li>
 </ul>
 
 
@@ -91,25 +92,48 @@ data from XLS file. Its an open-source project, hosted on <a href="https://githu
 <pre class="no-highlight">GET /api/restaurants/:id</pre>
 
 
-<p>Returns a single restaurant record, see reference for details.</p>
+<p>Returns a single restaurant record, see reference for details. Example:</p>
+
+<pre class="json">{
+  "<span class="attribute">id</span>": <span class="value"><span class="number">107257</span></span>,
+  "<span class="attribute">name</span>": <span class="value"><span class="string">"Las Tablas Colombian Steak House"</span></span>,
+  "<span class="attribute">address</span>": <span class="value"><span class="string">"2942 N Lincoln Ave"</span></span>,
+  "<span class="attribute">city</span>": <span class="value"><span class="string">"Chicago"</span></span>,
+  "<span class="attribute">state</span>": <span class="value"><span class="string">"IL"</span></span>,
+  "<span class="attribute">area</span>": <span class="value"><span class="string">"Chicago / Illinois"</span></span>,
+  "<span class="attribute">postal_code</span>": <span class="value"><span class="string">"60657"</span></span>,
+  "<span class="attribute">country</span>": <span class="value"><span class="string">"US"</span></span>,
+  "<span class="attribute">phone</span>": <span class="value"><span class="string">"7738712414"</span></span>,
+  "<span class="attribute">lat</span>": <span class="value"><span class="number">41.935137</span></span>,
+  "<span class="attribute">lng</span>": <span class="value">-<span class="number">87.662815</span></span>,
+  "<span class="attribute">price</span>": <span class="value"><span class="number">2</span></span>,
+  "<span class="attribute">reserve_url</span>": <span class="value"><span class="string">"http://www.opentable.com/single.aspx?rid=107257"</span></span>,
+  "<span class="attribute">mobile_reserve_url</span>": <span class="value"><span class="string">"http://mobile.opentable.com/opentable/?restId=107257"</span></span>,
+  "<span class="attribute">image_url</span>": <span class="value"><span class="string">"https://www.opentable.com/img/restimages/107257.jpg"</span>
+}</span></pre>
+
 
 <h2 id="data-reference"><a href="#data-reference" class="anchor">Data Reference</a></h2>
 
 <p>Restaurant attributes:</p>
 
-<pre class="no-highlight">{
-  "id": 55807,
-  "name": "ALC Steaks (Austin Land &amp; Cattle)",
-  "address": "1205 N. Lamar Blvd",
-  "city": "Austin",
-  "state": "TX",
-  "area": "Austin",
-  "postal_code": "78703",
-  "country": "US",
-  "phone": "5124721813",
-  "reserve_url": "http://www.opentable.com/single.aspx?rid=55807",
-  "mobile_reserve_url": "http://mobile.opentable.com/opentable/?restId=55807"
-}</pre>
+<pre class="json">{
+  "<span class="attribute">id</span>": <span class="value"><span class="number">107257</span></span>,
+  "<span class="attribute">name</span>": <span class="value"><span class="string">"Las Tablas Colombian Steak House"</span></span>,
+  "<span class="attribute">address</span>": <span class="value"><span class="string">"2942 N Lincoln Ave"</span></span>,
+  "<span class="attribute">city</span>": <span class="value"><span class="string">"Chicago"</span></span>,
+  "<span class="attribute">state</span>": <span class="value"><span class="string">"IL"</span></span>,
+  "<span class="attribute">area</span>": <span class="value"><span class="string">"Chicago / Illinois"</span></span>,
+  "<span class="attribute">postal_code</span>": <span class="value"><span class="string">"60657"</span></span>,
+  "<span class="attribute">country</span>": <span class="value"><span class="string">"US"</span></span>,
+  "<span class="attribute">phone</span>": <span class="value"><span class="string">"7738712414"</span></span>,
+  "<span class="attribute">lat</span>": <span class="value"><span class="number">41.935137</span></span>,
+  "<span class="attribute">lng</span>": <span class="value">-<span class="number">87.662815</span></span>,
+  "<span class="attribute">price</span>": <span class="value"><span class="number">2</span></span>,
+  "<span class="attribute">reserve_url</span>": <span class="value"><span class="string">"http://www.opentable.com/single.aspx?rid=107257"</span></span>,
+  "<span class="attribute">mobile_reserve_url</span>": <span class="value"><span class="string">"http://mobile.opentable.com/opentable/?restId=107257"</span></span>,
+  "<span class="attribute">image_url</span>": <span class="value"><span class="string">"https://www.opentable.com/img/restimages/107257.jpg"</span>
+}</span></pre>
 
 
 <p>To generate a proper reservation link just ref parameter with your affiliate ID to reserve_url or mobile_reserve_url</p>
@@ -136,11 +160,10 @@ api.restaurant(<span class="number">81169</span>)</pre>
 <h2 id="disclaimer"><a href="#disclaimer" class="anchor">Disclaimer</a></h2>
 
 <ul>
-<li>This service is not affiliated with OpenTable Inc., any of its products or
+<li>This service IS NOT affiliated with OpenTable Inc., any of its products or
 employees.</li>
 <li>All content is represented as is and does not have any modifications
 to the original data</li>
-<li>Restaurant data has extra columns to simplify integration with OpenTable website</li>
 </ul>
 
 
