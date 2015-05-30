@@ -9,8 +9,7 @@ configure do
 end
 
 configure :production do
-  require "skylight/sinatra"
-  Skylight.start!
+  # nothing
 end
 
 helpers do
