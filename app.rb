@@ -50,6 +50,18 @@ get "/metrics" do
   success_response(Redis.current.hgetall("req_count"))
 end
 
+get "/api" do
+  success_response(
+    endpoints: {
+      "/api/stats"           => "Get various stats on available data",
+      "/api/countries"       => "Get list of all available countries",
+      "/api/cities"          => "Get list of all available cities",
+      "/api/restaurants"     => "Search restaurants",
+      "/api/restaurants/:id" => "Get a single restaurant details"
+    }
+  )
+end
+
 get "/api/stats" do
   success_response(
     countries:   Restaurant.unique_countries.size,
