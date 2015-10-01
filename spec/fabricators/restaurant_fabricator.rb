@@ -1,8 +1,5 @@
 Fabricator(:restaurant) do
-  restaurant_id do
-    sequence(:restaurant_id) { |i| "OT#{i}" }
-  end
-
+  restaurant_id { Fabricate.sequence(:number) }
   name "Big Cheese Restaurant"
   address "123 Cool Street"
   city "Chicago"
