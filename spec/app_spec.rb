@@ -185,7 +185,7 @@ describe "Application" do
           "price"              => 3,
           "reserve_url"        => "http://www.opentable.com/single.aspx?rid=#{restaurant_id}",
           "mobile_reserve_url" => "http://mobile.opentable.com/opentable/?restId=#{restaurant_id}",
-          "image_url"          => "https://www.opentable.com/img/restimages/OT10031.jpg"
+          "image_url"          => "https://www.opentable.com/img/restimages/10031.jpg"
         )
       end
     end

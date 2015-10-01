@@ -19,7 +19,7 @@ gem "geoip",              "~> 1.4"
 group :development, :test do
   gem "rspec",            "~> 2.13"
   gem "rack-test",        "~> 0.6"
-  gem "database_cleaner", "~> 1.2"
+  gem "database_cleaner", github: "DatabaseCleaner/database_cleaner"
   gem "simplecov",        "~> 0.8"
   gem "fabrication",      "~> 2.9"
   gem "coveralls",        "~> 0.7"

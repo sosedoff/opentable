@@ -28,7 +28,7 @@ require "spec/fabricators/restaurant_fabricator"
 
 module ApiHelpers
   def json_response
-    MultiJson.load(last_response.body)
+    JSON.load(last_response.body)
   end
 
   def json_error
