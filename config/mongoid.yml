@@ -27,10 +27,10 @@ production:
     default:
       database: <%= ENV["MONGO_DB"] %>
       hosts:
-        - <%= ENV["MONGO_HOST_AND_PORT"] %>
+        - <%= ENV["MONGO_HOST"] + ":" + ENV["MONGO_PORT"] %>
       options:
         user: <%= ENV["MONGO_USER"] %>
-        password: <%= ENV["MONGO_PASSWORD"] %>
+        password: <%= ENV["MONGO_PASS"] %>
 
   options:
     use_utc: true
