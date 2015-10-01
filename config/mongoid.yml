@@ -1,24 +1,38 @@
-defaults: &defaults
-  host: localhost
-  use_utc: true
-  use_activesupport_time_zone: true
-  identity_map_enabled: true
-  max_retries_on_connection_failure: 5
-  raise_not_found_error: false
-
 development:
-  <<: *defaults
-  database: opentable_development
+  clients:
+    default:
+      database: opentable_development
+      hosts:
+        - localhost:27017
+
+  options:
+    use_utc: true
+    use_activesupport_time_zone: true
+    raise_not_found_error: false
 
 test:
-  <<: *defaults
-  database: opentable_test
+  clients:
+    default:
+      database: opentable_test
+      hosts:
+        - localhost:27017
+
+  options:
+    use_utc: true
+    use_activesupport_time_zone: true
+    raise_not_found_error: false
 
 production:
-  <<: *defaults
-  host: <%= ENV["MONGO_HOST"] %>
-  port: <%= ENV["MONGO_PORT"] || 27737 %>
-  database: <%= ENV["MONGO_DB"] %>
-  username: <%= ENV["MONGO_USER"] %>
-  password: <%= ENV["MONGO_PASS"] %>
-  logger: false
+  clients:
+    default:
+      database: <%= ENV["MONGO_DB"] %>
+      hosts:
+        - <%= ENV["MONGO_HOST_AND_PORT"] %>
+      options:
+        user: <%= ENV["MONGO_USER"] %>
+        password: <%= ENV["MONGO_PASSWORD"] %>
+
+  options:
+    use_utc: true
+    use_activesupport_time_zone: true
+    raise_not_found_error: false

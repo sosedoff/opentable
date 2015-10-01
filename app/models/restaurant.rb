@@ -22,10 +22,10 @@ class Restaurant
   validates :restaurant_id, presence: true, uniqueness: true
   validates :name,          presence: true
 
-  index :restaurant_id
-  index :city
-  index :state
-  index :postal_code
+  index restaurant_id: 1
+  index city: 1
+  index state: 1
+  index postal_code: 1
 
   def as_json(options = {})
     RestaurantSerializer.new(self, options).to_hash
