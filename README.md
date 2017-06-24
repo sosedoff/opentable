@@ -4,6 +4,8 @@ This project provides an unofficial json API interface to search OpenTable
 restaurant data. It eliminates the need to download, parse and import
 data from XLS file. Its an open-source project, hosted on [Github](https://github.com/sosedoff/opentable).
 
+**Status: Project and API data are no longer maintained.**
+
 ## Overview
 
 - API endpoint: [http://opentable.herokuapp.com/api](http://opentable.herokuapp.com/api)
